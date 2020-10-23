@@ -1,4 +1,4 @@
-package aircompany.bean;
+package aircompany.models;
 
 import aircompany.types.MilitaryType;
 import java.util.Objects;

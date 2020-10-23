@@ -1,10 +1,9 @@
 package aircompany;
 
 import aircompany.types.MilitaryType;
-import aircompany.bean.MilitaryPlane;
-import aircompany.bean.PassengerPlane;
-import aircompany.bean.Plane;
-
+import aircompany.models.MilitaryPlane;
+import aircompany.models.PassengerPlane;
+import aircompany.models.Plane;
 import java.util.Arrays;
 import java.util.List;
 
