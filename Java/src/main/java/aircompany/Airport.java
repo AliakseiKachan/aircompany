@@ -17,6 +17,18 @@ public class Airport {
 
     private List<? extends Plane> planes;
 
+    public Airport(List<? extends Plane> planes) {
+        this.planes = planes;
+    }
+
+    public List<? extends Plane> getPlanes() {
+        return planes;
+    }
+
+    public void setPlanes(List<? extends Plane> planes) {
+        this.planes = planes;
+    }
+
     public List<PassengerPlane> getPassengerPlane() {
 
         List<? extends Plane> listOfPlanes = this.planes;
@@ -102,20 +114,8 @@ public class Airport {
         return this;
     }
 
-    public List<? extends Plane> getPlanes() {
-        return planes;
-    }
-
-    public void setPlanes(List<? extends Plane> planes) {
-        this.planes = planes;
-    }
-
     @Override
     public String toString() {
         return planes.toString();
-    }
-
-    public Airport(List<? extends Plane> planes) {
-        this.planes = planes;
     }
 }

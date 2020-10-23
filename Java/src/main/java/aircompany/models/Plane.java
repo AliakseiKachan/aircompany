@@ -2,7 +2,7 @@ package aircompany.models;
 
 import java.util.Objects;
 
-abstract public class Plane {
+public class Plane {
 
     private String model;
     private int maxSpeed;
