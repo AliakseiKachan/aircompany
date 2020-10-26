@@ -65,7 +65,7 @@ public class AirportTest {
     public void testGetTransportMilitaryPlanes() {
 
         List<MilitaryPlane> transportMilitaryPlanes = airport.getTransportMilitaryPlane();
-        Assert.assertFalse(transportMilitaryPlanes.isEmpty(), "Test get transport military planes failed");
+        Assert.assertFalse(transportMilitaryPlanes.isEmpty(), "Check method getTransportMilitaryPlane");
     }
 
     @Test
@@ -73,17 +73,16 @@ public class AirportTest {
 
         PassengerPlane expectedPlaneWithMaxPassengersCapacity = airport.getPassengerPlaneWithMaxPassengersCapacity();
         Assert.assertEquals(planeWithMaxPassengerCapacity, expectedPlaneWithMaxPassengersCapacity,
-                "Test get passenger plane with max passenger capacity failed");
+                "Check method getPassengerPlaneWithMaxPassengersCapacity");
     }
 
     @Test
     public void testSortByMaxLoadCapacity() {
 
-        airport.sortByMaxLoadCapacity();
-        List<? extends Plane> planesSortedByMaxLoadCapacity = airport.getPlanes();
+        List<? extends Plane> planesSortedByMaxLoadCapacity = airport.sortByMaxLoadCapacity().getPlanes();
         planes.sort(Comparator.comparingInt(Plane::getMaxLoadCapacity));
         Assert.assertTrue(Arrays.equals(planesSortedByMaxLoadCapacity.toArray(), planes.toArray()),
-                "Test sort by max load capacity failed");
+                "Check method sortByMaxLoadCapacity");
     }
 
     @Test
@@ -91,7 +90,7 @@ public class AirportTest {
 
         List<MilitaryPlane> bomberMilitaryPlanes = airport.getBomberMilitaryPlane();
             Assert.assertFalse(bomberMilitaryPlanes.isEmpty(),
-                    "Test has at least one bomber in military planes failed");
+                    "Check method getBomberMilitaryPlane");
     }
 
     @Test
@@ -102,6 +101,6 @@ public class AirportTest {
                 experimentalPlane.getClassificationLevel().ordinal() >
                         ClassificationLevel.UNCLASSIFIED.ordinal()).collect(Collectors.toList());
         Assert.assertEquals(experimentalPlanes.size(), collect.size(),
-                "Test experimental planes has classification level higher than unclassified failed");
+                "Check that classification level of experimental planes is higher than UNCLASSIFIED");
     }
 }
